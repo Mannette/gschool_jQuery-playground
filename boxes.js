@@ -7,17 +7,20 @@ $(document).ready(function() {
   $('#secretBox').css({"background-color": "white"});
 
   // sets class of boxType1 and boxType2 in row 1 to boxType3
-  $('#row1').children()
+  $('#row1')
+  .children()
   .removeClass('boxType1 boxType2')
   .addClass('boxType3');
 
   // hides last div in row 4
-  $('#row4').children()
+  $('#row4')
+  .children()
   .last()
   .hide();
 
   // sets background of all red boxes to white
-  $('#container').children()
+  $('#container')
+  .children()
   .children('.boxType1')
   .css('background-color', 'white');
 
@@ -33,4 +36,10 @@ $(document).ready(function() {
   .children('.box')
   .not('#secretBox')
   .css('width', '2px');
+
+  // logs position of click
+  $('#container').on('click', function() {
+    console.log($('#container').position());
+  });
+
 });
